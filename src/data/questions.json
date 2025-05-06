@@ -1,0 +1,4 @@
+[
+  { "id": 1, "template": "console.log(____);", "answer": "'Hello, world!'" },
+  { "id": 2, "template": "const x = ____ + 5;", "answer": "10" }
+]
