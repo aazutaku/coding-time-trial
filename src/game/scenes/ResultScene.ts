@@ -53,7 +53,7 @@ export class ResultScene extends Phaser.Scene {
     this.add
       .text(
         this.scale.width / 2,
-        this.scale.height / 2 - 40,
+        this.scale.height / 2 - 80,
         "Mission Failed",
         {
           fontSize: "48px",
@@ -66,7 +66,7 @@ export class ResultScene extends Phaser.Scene {
     this.add
       .text(
         this.scale.width / 2,
-        this.scale.height / 2 + 20,
+        this.scale.height / 2 - 20,
         `Your Score: ${this.finalScore}`,
         {
           fontSize: "32px",
@@ -75,5 +75,49 @@ export class ResultScene extends Phaser.Scene {
         }
       )
       .setOrigin(0.5);
+
+    // トップに戻るボタン
+    const homeButton = this.add
+      .text(this.scale.width / 2, this.scale.height / 2 + 60, "🔁 Retry", {
+        fontSize: "24px",
+        color: "#00ffff",
+        fontFamily: "monospace",
+        backgroundColor: "#111111",
+        padding: { x: 12, y: 6 },
+      })
+      .setOrigin(0.5)
+      .setInteractive({ useHandCursor: true });
+
+    homeButton.on("pointerdown", () => {
+      this.scene.start("MainScene");
+    });
+
+    // X にツイートするボタン
+    const tweetText = encodeURIComponent(
+      `💣 Coding Time Attack - Score: ${this.finalScore}\nPlay now!`
+    );
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}&url=${encodeURIComponent(
+      "https://v.coding-time-trial.hack-lab.app/"
+    )}`;
+
+    const tweetButton = this.add
+      .text(
+        this.scale.width / 2,
+        this.scale.height / 2 + 110,
+        "📢 Share on X",
+        {
+          fontSize: "24px",
+          color: "#1DA1F2",
+          fontFamily: "monospace",
+          backgroundColor: "#111111",
+          padding: { x: 12, y: 6 },
+        }
+      )
+      .setOrigin(0.5)
+      .setInteractive({ useHandCursor: true });
+
+    tweetButton.on("pointerdown", () => {
+      window.open(tweetUrl, "_blank");
+    });
   }
 }

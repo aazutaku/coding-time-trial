@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import * as Phaser from "phaser";
 import config from "../game";
