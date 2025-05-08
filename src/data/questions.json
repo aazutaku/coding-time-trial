@@ -1,4 +1,702 @@
 [
-  { "id": 1, "template": "console.log(____);", "answer": "'Hello, world!'" },
-  { "id": 2, "template": "const x = ____ + 5;", "answer": "10" }
+  {
+    "id": 1,
+    "question": "xは数値型の変数として定義せよ。",
+    "template": "let x: ____ = 5;",
+    "answer": "number",
+    "score": 8
+  },
+  {
+    "id": 2,
+    "question": "nameは文字列型の定数として定義せよ。",
+    "template": "const name: ____ = 'Taro';",
+    "answer": "string",
+    "score": 8
+  },
+  {
+    "id": 3,
+    "question": "isDoneはboolean型でtrueを持つ変数とせよ。",
+    "template": "let isDone: ____ = true;",
+    "answer": "boolean",
+    "score": 9
+  },
+  {
+    "id": 4,
+    "question": "countの型を明示的に数値型にせよ。",
+    "template": "let count: ____ = 10;",
+    "answer": "number",
+    "score": 6
+  },
+  {
+    "id": 5,
+    "question": "flagはboolean型の定数とし、初期値はfalseとせよ。",
+    "template": "const flag: ____ = false;",
+    "answer": "boolean",
+    "score": 6
+  },
+  {
+    "id": 6,
+    "question": "greetingの型として文字列を指定せよ。",
+    "template": "let greeting: ____ = 'Hi';",
+    "answer": "string",
+    "score": 7
+  },
+  {
+    "id": 7,
+    "question": "scoreは初期値100の変数。型推論では何型になるか？",
+    "template": "let score = 100; // scoreの型は？ ____",
+    "answer": "number",
+    "score": 10
+  },
+  {
+    "id": 8,
+    "question": "piは数値型で定数とする場合、正しい型注釈を加えよ。",
+    "template": "const pi: ____ = 3.14;",
+    "answer": "number",
+    "score": 7
+  },
+  {
+    "id": 9,
+    "question": "hexは16進数0xffを格納する数値型変数。型を明示せよ。",
+    "template": "let hex: ____ = 0xff;",
+    "answer": "number",
+    "score": 7
+  },
+  {
+    "id": 10,
+    "question": "binaryは2進数0b1010を格納する数値型変数。型を明示せよ。",
+    "template": "let binary: ____ = 0b1010;",
+    "answer": "number",
+    "score": 7
+  },
+  {
+    "id": 11,
+    "question": "greet関数は文字列を返す。戻り値型を指定せよ。",
+    "template": "function greet(): ____ { return 'Hello'; }",
+    "answer": "string",
+    "score": 10
+  },
+  {
+    "id": 12,
+    "question": "add関数がaとbの和を返すようにしろ。",
+    "template": "function add(a: number, b: number) { return ____; }",
+    "answer": "a + b",
+    "score": 15
+  },
+  {
+    "id": 13,
+    "question": "double関数がnの2倍を返すようにしろ。",
+    "template": "const double = (n: number) => ____;",
+    "answer": "n * 2",
+    "score": 12
+  },
+  {
+    "id": 14,
+    "question": "nが偶数かを判定して返す関数を作れ。",
+    "template": "function isEven(n: number): boolean { return ____; }",
+    "answer": "n % 2 === 0",
+    "score": 10
+  },
+  {
+    "id": 15,
+    "question": "nameを使って挨拶文を返す関数を作れ。",
+    "template": "function say(name: string) { return `Hi, ${____}`; }",
+    "answer": "name",
+    "score": 7
+  },
+  {
+    "id": 16,
+    "question": "square関数がxの2乗を返すようにしろ。",
+    "template": "const square = (x: number): number => ____;",
+    "answer": "x * x",
+    "score": 11
+  },
+  {
+    "id": 17,
+    "question": "文字列の長さを返す関数を作れ。",
+    "template": "function getLength(str: string): number { return ____; }",
+    "answer": "str.length",
+    "score": 9
+  },
+  {
+    "id": 18,
+    "question": "論理否定を返す関数を作れ。",
+    "template": "function negate(flag: boolean) { return ____; }",
+    "answer": "!flag",
+    "score": 6
+  },
+  {
+    "id": 19,
+    "question": "2数の合計を返すアロー関数を作れ。",
+    "template": "const sum = (a: number, b: number): number => ____;",
+    "answer": "a + b",
+    "score": 15
+  },
+  {
+    "id": 20,
+    "question": "文字列を大文字に変換して返す関数を作れ。",
+    "template": "function toUpper(s: string): string { return ____; }",
+    "answer": "s.toUpperCase()",
+    "score": 10
+  },
+  {
+    "id": 21,
+    "question": "xが10より大きければ'big'と表示しろ。",
+    "template": "if (x > 10) { ____ }",
+    "answer": "console.log('big')",
+    "score": 6
+  },
+  {
+    "id": 22,
+    "question": "0〜4をループで表示しろ。",
+    "template": "for(let i = 0; i < 5; ____){ console.log(i); }",
+    "answer": "i++",
+    "score": 8
+  },
+  {
+    "id": 23,
+    "question": "nが0になるまで出力しながら減らせ。",
+    "template": "while(n > 0) { ____; n--; }",
+    "answer": "console.log(n)",
+    "score": 13
+  },
+  {
+    "id": 24,
+    "question": "xが0以下なら'negative'とする。",
+    "template": "const result = x > 0 ? 'positive' : ____;",
+    "answer": "'negative'",
+    "score": 15
+  },
+  {
+    "id": 25,
+    "question": "dayが'Mon'なら'Monday'と表示。",
+    "template": "switch(day) { case 'Mon': ____; break; }",
+    "answer": "console.log('Monday')",
+    "score": 8
+  },
+  {
+    "id": 26,
+    "question": "flagがfalseならmsgを'off'に。",
+    "template": "let msg = ''; if (!flag) { msg = ____; }",
+    "answer": "'off'",
+    "score": 15
+  },
+  {
+    "id": 27,
+    "question": "リストの中身を出力しろ。",
+    "template": "for(const item of list) { ____; }",
+    "answer": "console.log(item)",
+    "score": 15
+  },
+  {
+    "id": 28,
+    "question": "iを増やしながら最低1回はループしろ。",
+    "template": "do { ____; } while(i < 3);",
+    "answer": "i++",
+    "score": 13
+  },
+  {
+    "id": 29,
+    "question": "xが偶数なら'even'と表示しろ。",
+    "template": "if (x % 2 === 0) { ____; }",
+    "answer": "console.log('even')",
+    "score": 5
+  },
+  {
+    "id": 30,
+    "question": "空文字列ならnullを返せ。",
+    "template": "if (str === '') { ____; }",
+    "answer": "return null",
+    "score": 14
+  },
+  {
+    "id": 31,
+    "question": "userオブジェクトにageプロパティを追加しろ。",
+    "template": "let user = { name: 'Alice', ____: 30 };",
+    "answer": "age",
+    "score": 13
+  },
+  {
+    "id": 32,
+    "question": "Userインターフェースにageを追加しろ。",
+    "template": "interface User { name: string; ____: number; }",
+    "answer": "age",
+    "score": 11
+  },
+  {
+    "id": 33,
+    "question": "Postに任意プロパティcontentを追加しろ。",
+    "template": "interface Post { title: string; content?: ____; }",
+    "answer": "string",
+    "score": 13
+  },
+  {
+    "id": 34,
+    "question": "ID型をstringまたはnumberと定義しろ。",
+    "template": "type ID = ____;",
+    "answer": "string | number",
+    "score": 12
+  },
+  {
+    "id": 35,
+    "question": "portを読み取り専用として定義しろ。",
+    "template": "let config: { readonly port: ____ } = { port: 8080 };",
+    "answer": "number",
+    "score": 6
+  },
+  {
+    "id": 36,
+    "question": "greetメソッドの戻り型をvoidにせよ。",
+    "template": "interface Person { greet(): ____; }",
+    "answer": "void",
+    "score": 7
+  },
+  {
+    "id": 37,
+    "question": "uに合うオブジェクトリテラルを代入せよ。",
+    "template": "let u: { id: number; name: string } = ____;",
+    "answer": "{ id: 1, name: 'John' }",
+    "score": 14
+  },
+  {
+    "id": 38,
+    "question": "Productにインデックスシグネチャを追加せよ。",
+    "template": "interface Product { name: string; price: number; [key: string]: ____ }",
+    "answer": "any",
+    "score": 9
+  },
+  {
+    "id": 39,
+    "question": "Point型のpを初期化しろ。",
+    "template": "type Point = { x: number; y: number }; let p: Point = ____;",
+    "answer": "{ x: 0, y: 0 }",
+    "score": 5
+  },
+  {
+    "id": 40,
+    "question": "Record型でboolean値を持たせろ。",
+    "template": "let obj: Record<string, ____> = { key: true };",
+    "answer": "boolean",
+    "score": 11
+  },
+  {
+    "id": 41,
+    "question": "Userクラスを定義し、nameを初期化しろ。",
+    "template": "class ____ { name: string; constructor(n: string) { this.name = n; } }",
+    "answer": "User",
+    "score": 15
+  },
+  {
+    "id": 42,
+    "question": "Bを継承したAのコンストラクタ内でsuper()を呼べ。",
+    "template": "class A extends B { constructor() { ____; } }",
+    "answer": "super()",
+    "score": 5
+  },
+  {
+    "id": 43,
+    "question": "privateな数値型idを定義せよ。",
+    "template": "private ____: number;",
+    "answer": "_id",
+    "score": 7
+  },
+  {
+    "id": 44,
+    "question": "getterでプライベート変数_idを返せ。",
+    "template": "get id() { return ____; }",
+    "answer": "this._id",
+    "score": 11
+  },
+  {
+    "id": 45,
+    "question": "setterで_idに代入せよ。",
+    "template": "set id(v: number) { ____; }",
+    "answer": "this._id = v",
+    "score": 5
+  },
+  {
+    "id": 46,
+    "question": "静的メソッドgreetで'hi'を返せ。",
+    "template": "static greet() { return ____; }",
+    "answer": "'hi'",
+    "score": 10
+  },
+  {
+    "id": 47,
+    "question": "インスタンスuのnameを表示せよ。",
+    "template": "let u = new User('Tom'); console.log(u.____);",
+    "answer": "name",
+    "score": 7
+  },
+  {
+    "id": 48,
+    "question": "drawを抽象メソッドとして定義せよ。",
+    "template": "abstract class Shape { abstract ____(): void; }",
+    "answer": "draw",
+    "score": 10
+  },
+  {
+    "id": 49,
+    "question": "drawを持つインターフェースを定義せよ。",
+    "template": "interface Drawable { ____(): void; }",
+    "answer": "draw",
+    "score": 13
+  },
+  {
+    "id": 50,
+    "question": "インターフェースDrawableを実装せよ。",
+    "template": "implements ____",
+    "answer": "Drawable",
+    "score": 12
+  },
+  {
+    "id": 51,
+    "question": "ジェネリック関数の戻り型をTとせよ。",
+    "template": "function identity<T>(arg: T): ____ { return arg; }",
+    "answer": "T",
+    "score": 14
+  },
+  {
+    "id": 52,
+    "question": "valueを配列にして返せ。",
+    "template": "function wrap<T>(value: T): T[] { return ____; }",
+    "answer": "[value]",
+    "score": 9
+  },
+  {
+    "id": 53,
+    "question": "Boxインターフェースにジェネリック型を使え。",
+    "template": "interface Box<T> { value: ____ }",
+    "answer": "T",
+    "score": 7
+  },
+  {
+    "id": 54,
+    "question": "number型のBoxを初期化しろ。",
+    "template": "let box: Box<number> = { value: ____ };",
+    "answer": "123",
+    "score": 7
+  },
+  {
+    "id": 55,
+    "question": "aとbをタプルで返せ。",
+    "template": "function merge<T, U>(a: T, b: U): [T, U] { return ____; }",
+    "answer": "[a, b]",
+    "score": 8
+  },
+  {
+    "id": 56,
+    "question": "配列の最初の要素を返せ。",
+    "template": "function first<T>(arr: T[]): T { return ____; }",
+    "answer": "arr[0]",
+    "score": 12
+  },
+  {
+    "id": 57,
+    "question": "T型の配列として返せ。",
+    "template": "function toArray<T>(x: T): ____ { return [x]; }",
+    "answer": "T[]",
+    "score": 15
+  },
+  {
+    "id": 58,
+    "question": "同じ型Tを2つ返せ。",
+    "template": "function pair<T>(x: T): [T, ____] { return [x, x]; }",
+    "answer": "T",
+    "score": 10
+  },
+  {
+    "id": 59,
+    "question": "lengthプロパティを使え。",
+    "template": "function logLength<T extends { length: number }>(x: T): number { return x.____; }",
+    "answer": "length",
+    "score": 15
+  },
+  {
+    "id": 60,
+    "question": "string型配列として定義せよ。",
+    "template": "let val: Array<____> = ['a', 'b'];",
+    "answer": "string",
+    "score": 12
+  },
+  {
+    "id": 61,
+    "question": "statusをリテラル型で定義し'success'を代入せよ。",
+    "template": "let status: 'success' | 'error' = ____;",
+    "answer": "'success'",
+    "score": 9
+  },
+  {
+    "id": 62,
+    "question": "inputはstringまたはnumber型とせよ。",
+    "template": "let input: string | ____ = 123;",
+    "answer": "number",
+    "score": 6
+  },
+  {
+    "id": 63,
+    "question": "ID型をstringまたはnumber型で定義せよ。",
+    "template": "type ID = string | ____;",
+    "answer": "number",
+    "score": 14
+  },
+  {
+    "id": 64,
+    "question": "valueにnullを代入せよ。",
+    "template": "let value: string | null = ____;",
+    "answer": "null",
+    "score": 15
+  },
+  {
+    "id": 65,
+    "question": "valueをそのまま出力しろ。",
+    "template": "function log(value: string | number) { console.log(____); }",
+    "answer": "value",
+    "score": 5
+  },
+  {
+    "id": 66,
+    "question": "flagをtrueにせよ。",
+    "template": "let flag: true | false = ____;",
+    "answer": "true",
+    "score": 9
+  },
+  {
+    "id": 67,
+    "question": "rに'ok'を代入せよ。",
+    "template": "type Result = 'ok' | 'ng'; let r: Result = ____;",
+    "answer": "'ok'",
+    "score": 13
+  },
+  {
+    "id": 68,
+    "question": "vの型を取得しろ。",
+    "template": "function getType(v: string | number) { return typeof ____; }",
+    "answer": "v",
+    "score": 9
+  },
+  {
+    "id": 69,
+    "question": "dataをundefinedにせよ。",
+    "template": "let data: number | undefined = ____;",
+    "answer": "undefined",
+    "score": 13
+  },
+  {
+    "id": 70,
+    "question": "文字列と数値を含む配列を定義せよ。",
+    "template": "let arr: (string | number)[] = ____;",
+    "answer": "[1, 'a']",
+    "score": 15
+  },
+  {
+    "id": 71,
+    "question": "型ガード関数を定義せよ。",
+    "template": "function isString(x: unknown): x is string { return typeof x === ____; }",
+    "answer": "'string'",
+    "score": 12
+  },
+  {
+    "id": 72,
+    "question": "inputがstring型のとき出力せよ。",
+    "template": "if (typeof input === 'string') { console.log(____); }",
+    "answer": "input",
+    "score": 10
+  },
+  {
+    "id": 73,
+    "question": "nameプロパティの存在をチェックしろ。",
+    "template": "function hasName(obj: any): obj is { name: string } { return '____' in obj; }",
+    "answer": "name",
+    "score": 6
+  },
+  {
+    "id": 74,
+    "question": "xをstringとしてlengthを取得せよ。",
+    "template": "let len = (x as string).____;",
+    "answer": "length",
+    "score": 10
+  },
+  {
+    "id": 75,
+    "question": "xをstringとしてアサートせよ。",
+    "template": "const x: any = 'abc'; let len = (x as ____).length;",
+    "answer": "string",
+    "score": 13
+  },
+  {
+    "id": 76,
+    "question": "xがundefinedでないことを確認する型ガードを作れ。",
+    "template": "function isDefined<T>(x: T | undefined): x is ____ { return x !== undefined; }",
+    "answer": "T",
+    "score": 9
+  },
+  {
+    "id": 77,
+    "question": "配列であればlengthを表示せよ。",
+    "template": "if (Array.isArray(val)) { console.log(____); }",
+    "answer": "val.length",
+    "score": 11
+  },
+  {
+    "id": 78,
+    "question": "vがnumber型かを判定せよ。",
+    "template": "function isNumber(v: any): boolean { return typeof v === ____; }",
+    "answer": "'number'",
+    "score": 9
+  },
+  {
+    "id": 79,
+    "question": "型アサーションでuser.nameを取得せよ。",
+    "template": "let name = (user as { name: string }).____;",
+    "answer": "name",
+    "score": 7
+  },
+  {
+    "id": 80,
+    "question": "valがboolean型ならfalseを代入せよ。",
+    "template": "if (typeof val === 'boolean') { val = ____; }",
+    "answer": "false",
+    "score": 13
+  },
+  {
+    "id": 81,
+    "question": "非同期でgetData()を待て。",
+    "template": "async function fetchData() { return ____; }",
+    "answer": "await getData()",
+    "score": 9
+  },
+  {
+    "id": 82,
+    "question": "msミリ秒待つPromiseを返せ。",
+    "template": "function wait(ms: number): Promise<void> { return new Promise(____); }",
+    "answer": "(res) => setTimeout(res, ms)",
+    "score": 8
+  },
+  {
+    "id": 83,
+    "question": "APIをawaitで呼び出せ。(fetchを利用)",
+    "template": "const result = await ____;",
+    "answer": "fetch('/api')",
+    "score": 13
+  },
+  {
+    "id": 84,
+    "question": "レスポンスをjsonとして取得せよ。(fetchを利用)",
+    "template": "fetch(url).then(res => ____);",
+    "answer": "res.json()",
+    "score": 11
+  },
+  {
+    "id": 85,
+    "question": "取得した結果rを出力せよ。",
+    "template": "async function main() { const r = await get(); console.log(____); }",
+    "answer": "r",
+    "score": 13
+  },
+  {
+    "id": 86,
+    "question": "then内でvを出力せよ。",
+    "template": "Promise.resolve(123).then(v => console.log(____));",
+    "answer": "v",
+    "score": 9
+  },
+  {
+    "id": 87,
+    "question": "Promiseで'done'を解決値にせよ。",
+    "template": "const p = new Promise(resolve => resolve(____));",
+    "answer": "'done'",
+    "score": 5
+  },
+  {
+    "id": 88,
+    "question": "thenでログ出力せよ。",
+    "template": "async function call() { return 'ok'; } call().then(____);",
+    "answer": "console.log",
+    "score": 10
+  },
+  {
+    "id": 89,
+    "question": "msだけ待つsleep関数を定義せよ。",
+    "template": "const sleep = (ms: number) => new Promise(r => setTimeout(r, ____));",
+    "answer": "ms",
+    "score": 7
+  },
+  {
+    "id": 90,
+    "question": "即座にresolveするPromiseをawaitせよ。",
+    "template": "await new Promise(resolve => ____);",
+    "answer": "resolve()",
+    "score": 9
+  },
+  {
+    "id": 91,
+    "question": "Keys型にオブジェクトのキーを抽出せよ。",
+    "template": "type Keys = keyof ____;",
+    "answer": "{ name: string; age: number }",
+    "score": 15
+  },
+  {
+    "id": 92,
+    "question": "User型のすべてのプロパティを任意にせよ。",
+    "template": "type PartialUser = Partial<____>;",
+    "answer": "User",
+    "score": 7
+  },
+  {
+    "id": 93,
+    "question": "User型をすべてreadonlyにせよ。",
+    "template": "type ReadonlyUser = Readonly<____>;",
+    "answer": "User",
+    "score": 5
+  },
+  {
+    "id": 94,
+    "question": "User型からnameプロパティだけ抜き出せ。",
+    "template": "type PickName = Pick<User, '____'>;",
+    "answer": "name",
+    "score": 13
+  },
+  {
+    "id": 95,
+    "question": "User型のすべてのプロパティを必須にせよ。",
+    "template": "type RequiredUser = Required<____>;",
+    "answer": "User",
+    "score": 14
+  },
+  {
+    "id": 96,
+    "question": "共通部分(string)のみ抽出せよ。",
+    "template": "type ID = Extract<string | number, ____>;",
+    "answer": "string",
+    "score": 8
+  },
+  {
+    "id": 97,
+    "question": "'a'を除いた型を定義せよ。",
+    "template": "type T = Exclude<'a' | 'b', ____>;",
+    "answer": "'a'",
+    "score": 6
+  },
+  {
+    "id": 98,
+    "question": "nullとundefinedを除外せよ。",
+    "template": "type U = NonNullable<string | null | ____>;",
+    "answer": "undefined",
+    "score": 6
+  },
+  {
+    "id": 99,
+    "question": "関数の戻り型を取得する条件型を定義せよ。",
+    "template": "type FnReturn<T> = T extends (...args: any) => infer R ? R : never;",
+    "answer": "infer",
+    "score": 8
+  },
+  {
+    "id": 100,
+    "question": "Mapped typeで各プロパティをそのままの型にせよ。",
+    "template": "type Map<T> = { [P in keyof T]: ____ };",
+    "answer": "T[P]",
+    "score": 6
+  }
 ]

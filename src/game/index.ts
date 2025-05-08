@@ -1,3 +1,4 @@
+import * as Phaser from "phaser";
 import { MainScene } from "./scenes/MainScene";
 import { ResultScene } from "./scenes/ResultScene";
 

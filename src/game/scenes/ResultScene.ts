@@ -54,7 +54,7 @@ export class ResultScene extends Phaser.Scene {
       .text(
         this.scale.width / 2,
         this.scale.height / 2 - 80,
-        "Mission Failed",
+        "Mission Complate",
         {
           fontSize: "48px",
           color: "#ff5555",
@@ -78,7 +78,7 @@ export class ResultScene extends Phaser.Scene {
 
     // トップに戻るボタン
     const homeButton = this.add
-      .text(this.scale.width / 2, this.scale.height / 2 + 60, "🔁 Retry", {
+      .text(this.scale.width / 2, this.scale.height / 2 + 60, "🔙 Top", {
         fontSize: "24px",
         color: "#00ffff",
         fontFamily: "monospace",
@@ -89,7 +89,7 @@ export class ResultScene extends Phaser.Scene {
       .setInteractive({ useHandCursor: true });
 
     homeButton.on("pointerdown", () => {
-      this.scene.start("MainScene");
+      window.location.href = "/";
     });
 
     // X にツイートするボタン
